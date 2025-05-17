@@ -1,73 +1,69 @@
-# Welcome to your Lovable project
 
-## Project info
+# SOC Assistant Chat UI
 
-**URL**: https://lovable.dev/projects/4af2b65b-e092-4620-9272-6eedda286683
+A modern, minimalistic, production-grade chat UI for a Security Operations Center (SOC) Assistant. Connects to a FastAPI backend.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Chat-style interface for security questions (natural language)
+- Distinct chat bubbles for user/assistant
+- Minimalist, professional light theme (Tailwind CSS + shadcn)
+- Sidebar/header with branding and quick actions
+- "Assistant is typing..." animated loading state
+- Handles error states (e.g., server down)
+- Reactive, smooth experience, easy to extend
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4af2b65b-e092-4620-9272-6eedda286683) and start prompting.
+- React + Vite
+- Tailwind CSS + Inter font
+- shadcn/ui (react)
+- Axios (API calls)
+- TypeScript
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started (Development)
 
-**Use your preferred IDE**
+1. **Install Node.js** (LTS recommended)
+2. **Clone this repo**  
+   ```
+   git clone <repo-url>
+   cd <project>
+   ```
+3. **Install dependencies**  
+   ```
+   npm install
+   ```
+4. **Start the development server**  
+   ```
+   npm run dev
+   ```
+5. **Connect to FastAPI backend**
+   - Update the `src/api/chat.ts` `BASE_URL` if your backend is deployed elsewhere.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+**Backend API contract:**  
+`POST /chat`  
+Payload:
+```json
+{ "message": "<user_message>" }
+```
+Response:
+```json
+{ "response": "<assistant_response>" }
 ```
 
-**Edit a file directly in GitHub**
+## Customization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Update branding or actions in `src/components/Header.tsx`.
+- Adjust styles via Tailwind in component classes.
+- Add/modify quick actions as needed.
 
-**Use GitHub Codespaces**
+## Deployment
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Standard React/Vite build.  
+```
+npm run build
+```
 
-## What technologies are used for this project?
+## License
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4af2b65b-e092-4620-9272-6eedda286683) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT
