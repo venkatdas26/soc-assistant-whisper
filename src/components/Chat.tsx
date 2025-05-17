@@ -4,6 +4,7 @@ import ChatMessage from "./ChatMessage";
 import ChatInput from "./ChatInput";
 import LoadingDots from "./LoadingDots";
 import { sendChatMessage } from "@/api/chat";
+import Header from "./Header";
 
 type Message = {
   id: string;
@@ -80,8 +81,6 @@ export default function Chat() {
     <div className="w-full max-w-2xl mx-auto flex flex-col items-center font-sans">
       {/* Header */}
       <div className="mb-1 w-full">
-        {/* Pass quick actions to header */}
-        <import src="./Header" as={Header} />
         <Header onQuickAction={handleQuickAction} />
       </div>
       {/* Chat window */}
