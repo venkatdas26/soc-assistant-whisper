@@ -1,5 +1,5 @@
 
-# SOC Assistant Chat UI
+# SOC Assistant Chat UI.
 
 A modern, minimalistic, production-grade chat UI for a Security Operations Center (SOC) Assistant. Connects to a FastAPI backend.
 
